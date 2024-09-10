@@ -1,0 +1,13 @@
+/* appointment.component.css */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-dark th {
+    background-color: #343a40;
+    color: white;
+}
+
+.alert {
+    margin-bottom: 20px;
+}

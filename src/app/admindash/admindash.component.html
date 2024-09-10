@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <a class="navbar-brand text-white" href="#">WAGH HOSPITALS</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="javascript:void(0);" routerLink="/appointmentlist">Appointments</a>
+      </li>
+    </ul>
+
+    <div class="mx-2">
+      <button class="btn btn-danger" style="margin: 5px;">
+        <a class="text-white" href="javascript:void(0);" routerLink="/home">Logout</a>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <hr>
+  <h2 class="text-center" style="margin-top: 20px;">Admin Dashboard</h2>
+  <div class="alert alert-secondary" role="alert">
+    <marquee behavior="scroll" direction="left">
+      Welcome to Admin Dashboard. Please find the patient list below! Click Appointments to view and update Appointments, Click Add Appointment to add a new Appointment.
+    </marquee>
+  </div>
+  <hr>
+<!-- <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search" (input)="searchPatients()">  -->
+  <!-- <br> -->
+  <h3 class="text-center text-muted">Current Patient List in the Queue</h3>
+  
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Mobile</th>
+          <!-- <th>Blood</th>
+          <th>Prescription</th>
+          <th>Dose</th> -->
+          <th>Fees</th>
+          <th>Urgency</th>
+          <th>Register Date</th>
+          <th>Updated Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients">
+          <td>{{ patient.id }}</td>
+          <td>{{ patient.name }}</td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.mobile }}</td>   
+          <!-- <td>{{ patient.blood }}</td>
+          <td>{{ patient.prescription }}</td>
+          <td>{{ patient.dose }}</td> -->
+          <td>{{ patient.fees }}</td>
+          <td>{{ patient.urgency }}</td>
+          <td>{{ patient.registerDate | date: 'd MMMM, yyyy, h:mm a' }}</td>
+          <td>{{ patient.updatedDate | date: 'd MMMM, yyyy, h:mm a' }}</td>
+          <td>
+            <button (click)="delete(patient.id)" class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
