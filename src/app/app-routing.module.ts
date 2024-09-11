@@ -6,6 +6,7 @@ import { CreateAppointmentComponent } from './create-appointment/create-appointm
 import { HomeComponent } from './home/home.component';
 import { DoctordashComponent } from './doctordash/doctordash.component';
 import { CreatePatientComponent } from './create-patient/create-patient.component';
+import { MedicinelistComponent } from './medicinelist/medicinelist.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,11 @@ const routes: Routes = [
   },
   {
   path: 'add-patient', component: CreatePatientComponent
-  }
+  },
+  {
+   path: 'add-medicines', component: MedicinelistComponent 
+  }  
+
 ];
 
 @NgModule({
